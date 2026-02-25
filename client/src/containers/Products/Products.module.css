@@ -1,0 +1,157 @@
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.breadcrumb {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 25px;
+}
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 50px;
+}
+
+.gallery {
+    display: flex;
+    gap: 15px;
+}
+
+.thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.thumb {
+    width: 75px;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #eee;
+}
+
+.mainImageWrapper {
+    flex: 1;
+}
+
+.mainImg {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.brand {
+    font-size: 12px;
+    font-weight: 700;
+    color: #006666;
+    letter-spacing: 1px;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 10px 0;
+    color: #1a1a1a;
+}
+
+.priceRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+.price {
+    font-size: 28px;
+    color: #006666;
+    font-weight: 700;
+}
+
+.star {
+    color: #006666;
+}
+
+.descriptionSection h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.descriptionSection p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.sectionLabel {
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.sizeGrid {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.sizeBtn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.activeSize {
+    background: #006666;
+    color: #fff;
+    border-color: #006666;
+}
+
+.actions {
+    display: flex;
+    gap: 15px;
+}
+
+.cartBtn {
+    flex: 1;
+    padding: 18px;
+    background: #006666;
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.cartBtn:hover {
+    background: #004d4d;
+}
+
+.buyBtn {
+    flex: 1;
+    padding: 18px;
+    background: #fff;
+    border: 2px solid #006666;
+    color: #006666;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .mainGrid { grid-template-columns: 1fr; }
+    .gallery { flex-direction: column-reverse; }
+    .thumbnails { flex-direction: row; }
+}

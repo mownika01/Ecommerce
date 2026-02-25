@@ -1,0 +1,139 @@
+.container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+}
+
+.cartGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+.cartItem {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+.itemImg {
+    width: 100px;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+}
+
+.itemDetails h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.itemPrice {
+    font-weight: 700;
+    color: #006666;
+}
+
+.removeBtn {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: #cc0000;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.summary {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.summaryRow {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.free {
+    color: #006666;
+    font-weight: 700;
+}
+
+.total {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.checkoutBtn {
+    width: 100%;
+    padding: 18px;
+    background: #006666;
+    color: white;
+    border: none;
+    font-weight: 700;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.checkoutBtn:hover {
+    background: #004d4d;
+}
+
+.quantityContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.qtySelector {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.qtyBtn {
+    background: #f8f8f8;
+    border: none;
+    padding: 2px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #006666;
+    font-weight: bold;
+}
+
+.qtyBtn:hover {
+    background: #006666;
+    color: white;
+}
+
+.qtyNumber {
+    padding: 0 12px;
+    font-weight: 600;
+    font-size: 14px;
+    min-width: 30px;
+    text-align: center;
+}
+
+.itemPrice {
+    font-weight: 600;
+    color: #006666;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .cartGrid { grid-template-columns: 1fr; }
+}

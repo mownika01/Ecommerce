@@ -1,0 +1,112 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbarLeftContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.navActions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.authLink {
+    text-decoration: none;
+    color: #333;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.authLink:hover {
+    color: #006666;
+}
+
+.profileContainer {
+    position: relative;
+    cursor: pointer;
+}
+
+.profileIcon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+.profileIcon:hover {
+  color:#006666
+}
+
+.userName {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.dropdown {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown a, .logoutBtn {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    text-align: left;
+    background: none;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+.dropdown a:hover, .logoutBtn:hover {
+    background-color: #f5f5f5;
+    color: #006666;
+}
+
+.cartIconContainer {
+    position: relative;
+    color: #333;
+}
+
+.cartIconContainer:hover {
+  color: #006666;
+}
+
+.cartBadge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #006666;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+.logo {
+  text-decoration: none;
+  color: black;
+}

@@ -1,0 +1,76 @@
+.heroContainer {
+  background-color: #f3f9fb; /* Light blue tint from MegaMart */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  min-height: 450px;
+  overflow: hidden;
+  position: relative;
+}
+
+.textContent {
+  flex: 1;
+  z-index: 2;
+}
+
+.subTitle {
+  color: #006666;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.mainTitle {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #006666;
+}
+
+.shopBtn {
+  background-color: #006666;
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  transition: transform 0.2s ease;
+}
+
+.shopBtn:hover {
+  transform: scale(1.05);
+  background-color: #006666;
+}
+
+.imageContent {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.circleDecor {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.heroImage {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 20px;
+  z-index: 2;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}

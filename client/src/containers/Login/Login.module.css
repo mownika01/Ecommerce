@@ -1,0 +1,87 @@
+
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+    background-image: linear-gradient(
+      rgba(76, 75, 75, 0.5),
+      rgba(186, 184, 184, 0.5)
+    ),
+    url('../../assets/girl.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper {
+  padding: 20px;
+  width: 25%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+@media only screen and (max-width: 380px) {
+  .wrapper {
+    width: 75%;
+  }
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.input {
+  flex: 1;
+  min-width: 25%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.button {
+  background-color: teal;
+  color: white;
+  cursor: pointer;
+  border: none;
+  width: 40%;
+  padding: 15px 20px;
+  font-size: 15px;
+  margin: 15px auto;
+  border-radius: 5px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #006666;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  text-decoration: underline;
+  cursor: pointer;
+  color: #555;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: teal;
+}
