@@ -17,7 +17,6 @@ export default function Navbar() {
         navigate('/login');
     };
 
-    console.log(user,"user")
 
     return (
         <nav className={styles.navbar}>

@@ -1,0 +1,164 @@
+.checkoutPage {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #333;
+}
+
+.checkoutContent {
+    display: flex;
+    gap: 60px;
+}
+
+.checkoutLeft {
+    flex: 1.5;
+}
+
+.checkoutSection {
+    margin-bottom: 40px;
+}
+
+.checkoutSection h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #111;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.formGroup {
+    margin-bottom: 15px;
+}
+
+.checkoutLeft input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.formRow {
+    display: flex;
+    gap: 15px;
+}
+
+.formRow input {
+    flex: 1;
+}
+
+/* Razorpay Only Payment UI */
+.paymentBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid #006d77;
+    background-color: #f0f8f8;
+    border-radius: 8px;
+}
+
+.paymentInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.paymentText strong {
+    display: block;
+    font-size: 16px;
+    white-space: noWrap;
+}
+
+.paymentText p {
+    font-size: 13px;
+    color: #666;
+    margin: 2px 0 0 0;
+}
+
+.razorpayLogo {
+    width: 30px;
+}
+
+.payNowBtn {
+    width: 100%;
+    background-color: #006d77;
+    color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: opacity 0.2s;
+}
+
+.payNowBtn:hover {
+    opacity: 0.9;
+}
+
+/* Summary Styles */
+.checkoutRight {
+    flex: 1;
+}
+
+.summaryCard {
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 25px;
+    border-radius: 12px;
+    position: sticky;
+    top: 20px;
+}
+
+.summaryItem {
+    display: flex;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.summaryItem img {
+    width: 70px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.itemDetails p {
+    margin: 0;
+}
+
+.itemName {
+    font-weight: 600;
+    margin-bottom: 5px !important;
+}
+
+.itemMeta {
+    font-size: 13px;
+    color: #777;
+}
+
+.itemPrice {
+    font-weight: 700;
+    margin-top: 5px !important;
+}
+
+.totalRow {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+@media (max-width: 900px) {
+    .checkoutContent {
+        flex-direction: column;
+    }
+}

@@ -8,6 +8,7 @@ import Cart from '../containers/Cart';
 import Signup from '../containers/Register';
 import Login from '../containers/Login';
 import Home from '../containers/Home';
+import Checkout from '../containers/Checkout';
 
 function App() {
     const location = useLocation();
@@ -22,6 +23,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/checkout" element={<Checkout />}></Route>
       </Routes>
       {/* <Footer /> */}
     </>

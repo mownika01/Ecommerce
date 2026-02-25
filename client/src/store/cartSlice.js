@@ -49,7 +49,7 @@ export const changeQuantity = createAsyncThunk(
       dispatch(cartSlice.actions.updateQuantityLocal({ id, size, delta }));
 
       if (auth.token) {
-        await axiosInstance.post('/cart/update', {
+        await axiosInstance.patch('/cart/update', {
           productId: id,
           quantity: newQty
         });
@@ -71,6 +71,28 @@ export const fetchCart = createAsyncThunk(
             return rejectWithValue(err.response.data);
         }
     }
+);
+
+export const removeFromCart = createAsyncThunk(
+  'cart/removeCartItem',
+  async ({ id, size }, { getState, dispatch, rejectWithValue }) => {
+    try {
+      const { auth } = getState();
+
+      dispatch(cartSlice.actions.removeItemLocal({ id, size }));
+
+      if (auth.token) {
+        await axiosInstance.delete('/cart/remove', {
+          data: { 
+            productId: id, 
+            size: size 
+          }
+        });
+      }
+    } catch (err) {
+      return rejectWithValue(err.response?.data || "Failed to remove item");
+    }
+  }
 );
 
 const saveToLocal = (state) => {
@@ -103,8 +125,10 @@ const cartSlice = createSlice({
         existingItem.quantity++;
         existingItem.totalPrice += newItem.price;
       }
-      state.totalAmount = state.cartItems.reduce((total, item) => total + item.totalPrice, 0);
-      localStorage.setItem('cartItems', JSON.stringify(state.cartItems));
+      state.totalQuantity = state.cartItems.reduce((total, item) => total + item.quantity, 0);
+  state.totalAmount = state.cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+  
+  saveToLocal(state);
     },
     updateQuantityLocal: (state, action) => {
       const { id, size, delta } = action.payload;
@@ -118,16 +142,21 @@ const cartSlice = createSlice({
       }
       state.totalQuantity = state.cartItems.reduce((total, i) => total + i.quantity, 0);
       state.totalAmount = state.cartItems.reduce((total, i) => total + (i.price * i.quantity), 0);
+      saveToLocal(state);
     },
-    removeFromCart: (state, action) => {
-      const { id, size } = action.payload;
-      const existingItem = state.cartItems.find((item) => item.id === id && item.size === size);
-      if (existingItem) {
-        state.totalQuantity -= existingItem.quantity;
-        state.cartItems = state.cartItems.filter((item) => !(item.id === id && item.size === size));
-        state.totalAmount = state.cartItems.reduce((total, item) => total + item.totalPrice, 0);
-      }
-    },
+    removeItemLocal: (state, action) => {
+  const { id, size } = action.payload;
+  const existingItem = state.cartItems.find(item => item.id === id && item.size === size);
+
+  if (existingItem) {
+    state.cartItems = state.cartItems.filter(item => !(item.id === id && item.size === size));
+
+    state.totalQuantity = state.cartItems.reduce((total, item) => total + item.quantity, 0);
+    state.totalAmount = state.cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+
+    saveToLocal(state);
+  }
+},
     setCart: (state, action) => {
     state.cartItems = action.payload.items.map(item => ({
         id: item.product._id,
@@ -155,5 +184,5 @@ const cartSlice = createSlice({
   }
 });
 
-export const { addToCartLocal, updateQuantityLocal, removeFromCart, setCart } = cartSlice.actions;
+export const { addToCartLocal, updateQuantityLocal, setCart } = cartSlice.actions;
 export default cartSlice.reducer;
